@@ -29,4 +29,14 @@ $stmt->execute(['valor' => 'dato_filtro']);
 while ($row = $stmt->fetch()) {
     echo $row['columna1'] . ' - ' . $row['columna2'] . "\n";
 }
+
+
+// PARA INSERTAR
+$sql = "INSERT INTO nombre_de_tu_tabla (columna1, columna2) VALUES (:valor1, :valor2)";
+$stmt= $pdo->prepare($sql);
+
+// Ejecutar la consulta con los valores que deseas insertar
+$stmt->execute(['valor1' => 'dato1', 'valor2' => 'dato2']);
+
+    
 ?>
